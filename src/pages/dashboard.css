@@ -1,0 +1,257 @@
+/* ── Reset ───────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Dashboard Layout ────────────────────────────────────────────────────────── */
+.dashboard {
+  min-height: 100vh;
+  background: #0d1117;
+  color: #c8d8e8;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  padding: 48px 64px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────────── */
+.header {
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #e8f4f8;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #445566;
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+}
+
+/* ── Controls Row ────────────────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  height: 40px;
+  padding: 0 20px;
+  background: transparent;
+  border: 1px solid #00e5ff33;
+  color: #00e5ff;
+  font-family: inherit;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.controls button:hover {
+  background: #00e5ff11;
+  border-color: #00e5ff66;
+}
+
+.controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.range-warning {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #ff4466;
+  letter-spacing: 0.04em;
+}
+
+/* ── Error ───────────────────────────────────────────────────────────────────── */
+.error-msg {
+  background: #1a0d0d;
+  border: 1px solid #ff446644;
+  color: #ff6677;
+  font-size: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Stat Cards Row ──────────────────────────────────────────────────────────── */
+.cards-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  flex: 1 1 220px;
+  max-width: 300px;
+  background: #111820;
+  border: 1px solid #1e2d3d;
+  border-radius: 10px;
+  padding: 20px 24px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #445566;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 13px;
+  font-weight: 400;
+  color: #445566;
+  margin-left: 5px;
+  letter-spacing: 0.06em;
+}
+
+.stat-skeleton {
+  height: 36px;
+  width: 120px;
+  background: #1a2535;
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.stat-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0.35;
+}
+
+/* ── Chart Box ───────────────────────────────────────────────────────────────── */
+.chart-box {
+  background: #111820;
+  border: 1px solid #1e2d3d;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.chart-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart-title {
+  font-size: 11px;
+  color: #8899aa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.chart-skeleton {
+  height: 200px;
+  background: #1a2535;
+  border-radius: 6px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.chart-empty {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #334455;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────────────────────── */
+.custom-tooltip {
+  background: #111820;
+  border: 1px solid #1e2d3d;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.tt-period {
+  font-size: 11px;
+  color: #445566;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.tt-value {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ── Source Bar ──────────────────────────────────────────────────────────────── */
+.source-bar {
+  display: flex;
+  gap: 32px;
+  font-size: 11px;
+  color: #334455;
+  letter-spacing: 0.06em;
+  flex-wrap: wrap;
+}
+
+.source-bar span {
+  color: #556677;
+  margin-left: 6px;
+}
+
+/* ── Pulse animation ─────────────────────────────────────────────────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 28px 20px 60px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .stat-card {
+    max-width: 100%;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+}
